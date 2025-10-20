@@ -24,6 +24,11 @@ app.get('/api/splits/test', (req, res) => {
   res.json({ message: 'Backend is working! ✅' });
 });
 
+app.get('/ping', (req, res) => {
+  res.status(200).send('pong');
+});
+
+
 // MongoDB Connection & Server Start
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
